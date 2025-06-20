@@ -8,30 +8,30 @@ def run_command(command):
         exit(1)
 
 def main():
-    print("🚀 Déploiement Git Automatisé")
+    print("Déploiement Git Automatisé")
 
-    branch = input("📝 Nom de la branche à créer/pousser (ex: back) : ").strip()
-    remote_url = input("🔗 Lien du dépôt GitHub (ex: https://github.com/...) : ").strip()
+    branch = input("Nom de la branche à créer/pousser (ex: back) : ").strip()
+    remote_url = input(" Lien du dépôt GitHub (ex: https://github.com/...) : ").strip()
 
-    print("\n🔧 Initialisation du dépôt Git...")
+    print("\nInitialisation du dépôt Git...")
     run_command("git init")
 
-    print("➕ Ajout des fichiers...")
+    print("Ajout des fichiers...")
     run_command("git add .")
 
-    print("💬 Commit des fichiers...")
+    print("Commit des fichiers...")
     run_command(f'git commit -m "Initial commit on {branch} branch"')
 
-    print(f"🌿 Création/bascule sur la branche '{branch}'...")
+    print(f"Création/bascule sur la branche '{branch}'...")
     run_command(f"git checkout -b {branch}")
 
-    print("🔗 Ajout du dépôt distant...")
+    print("Ajout du dépôt distant...")
     run_command(f"git remote add origin {remote_url}")
 
-    print(f"🚀 Poussée de la branche '{branch}' vers GitHub...")
+    print(f"Poussée de la branche '{branch}' vers GitHub...")
     run_command(f"git push -u origin {branch}")
 
-    print("\n✅ Déploiement terminé avec succès !")
+    print("Déploiement terminé avec succès !")
 
 if __name__ == "__main__":
     main()
